@@ -8,7 +8,7 @@ If you find this useful, please buy me a coffee
 
 <a href="https://www.paypal.me/mattiab/">
     <img src="https://img.shields.io/badge/paypal-%2300457C.svg?&style=for-the-badge&logo=paypal&logoColor=white" />
-  </a>
+</a>
 
 <br>
 
