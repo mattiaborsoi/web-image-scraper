@@ -1,4 +1,4 @@
-# WEB Image Scraper Demo
+# Go SMS Pro Scraper Demo
  Following the recent findings (Source: [Trustwave](https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/go-sms-pro-vulnerable-to-media-file-theft/?=go-sms-pro-vulnerability-to-media-file-theft)) that the Android messaging app Go SMS Pro uploads all content publicly, here is an example of a scraper to fetch and download images from a URL following an incremental pattern.
  eg. site.example/000000 > FFFFFF
 
