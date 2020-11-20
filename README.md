@@ -1,5 +1,6 @@
 # Go SMS Pro Scraper
- Following the recent findings (Source: [Trustwave](https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/go-sms-pro-vulnerable-to-media-file-theft/?=go-sms-pro-vulnerability-to-media-file-theft)) that the Android messaging app Go SMS Pro uploads all content publicly, here is a quick scraper to fetch and download all publicly available content.
+ Following the recent findings (Source: [Trustwave](https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/go-sms-pro-vulnerable-to-media-file-theft/?=go-sms-pro-vulnerability-to-media-file-theft)) that the Android messaging app Go SMS Pro uploads all content publicly, here is an example of a scraper to fetch and download images from a URL following an incremental pattern.
+ eg. site.example/000000 > FFFFFF
 
 <br>
 
@@ -13,10 +14,11 @@ If you find this useful, please buy me a coffee
 <br>
 
  # WARNING
-This tool is for research purpose only and retrieves content that is already public. Any action with any of the downloaded content is against the law.
+This tool is for research purpose only and retrieves content that is already public. Any action with any of the downloaded content is definitely against the law.
 
  # Setup
 ```
+cd ~/Downloads
 pip3 install wget
 git clone https://github.com/mattiaborsoi/Go-SMS-Pro-Scraper
 cd Go-SMS-Pro-Scraper
@@ -24,12 +26,11 @@ sh sms.sh
 ```
 
 
- # Note
- 1 - the links may be revoked at anytime should the developer fix the bug. 
- <br>
- 2 -  The scraper starts from the url http://gs.3g.cn/D/dd**0000**, increasing the HEX value to http://gs.3g.cn/D/dd**FFFF**
- You can edit that URL to http://gs.3g.cn/D/**00** in the code to scrape ALL the available content
-
+ # Note 1
+ I hope the developers fix the bug and implement some kind of authentication for shared content. Until then all attachments to a chat are exposed publicly.
+ # Note 1
+ The scraper in this example starts from the url gs.3g.cn/D/dd**0000**, increasing the HEX value to gs.3g.cn/D/dd**FFFF**
+ 
 
 <p align='center'>
   <a href="#"><img src="https://badges.pufler.dev/visits/mattiaborsoi/Go-SMS-Pro-Scraper"></a>

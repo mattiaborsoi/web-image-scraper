@@ -2,8 +2,8 @@ import sys
 import requests
 import urllib.parse
 import wget
-
 site = sys.argv[1]
+print(site)
 r = requests.get(site)
 imageUrl=r.url
 
