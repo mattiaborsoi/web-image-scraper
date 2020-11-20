@@ -18,8 +18,8 @@ This tool is for research purpose only and retrieves content that is already pub
  # Setup
 ```
 pip3 install wget
-git clone repo here
-cd repo here
+git clone https://github.com/mattiaborsoi/Go-SMS-Pro-Scraper
+cd Go-SMS-Pro-Scraper
 sh sms.sh
 ```
 
@@ -29,3 +29,8 @@ sh sms.sh
  <br>
  2 -  The scraper starts from the url http://gs.3g.cn/D/dd**0000**, increasing the HEX value to http://gs.3g.cn/D/dd**FFFF**
  You can edit that URL to http://gs.3g.cn/D/**00** in the code to scrape ALL the available content
+
+
+<p align='center'>
+  <a href="#"><img src="https://badges.pufler.dev/visits/mattiaborsoi/mattiaborsoi"></a>
+</p>
