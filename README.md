@@ -19,7 +19,7 @@ This tool is for research purpose only and retrieves content that is already pub
  # Setup
 ```
 cd ~/Downloads
-pip3 install wget
+pip3 install wget,request
 git clone https://github.com/mattiaborsoi/web-image-scraper
 cd web-image-scraper
 sh sms.sh
