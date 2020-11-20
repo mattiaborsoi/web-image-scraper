@@ -32,5 +32,5 @@ sh sms.sh
 
 
 <p align='center'>
-  <a href="#"><img src="https://badges.pufler.dev/visits/mattiaborsoi/mattiaborsoi"></a>
+  <a href="#"><img src="https://badges.pufler.dev/visits/mattiaborsoi/Go-SMS-Pro-Scraper"></a>
 </p>
