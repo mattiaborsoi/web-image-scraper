@@ -20,8 +20,8 @@ This tool is for research purpose only and retrieves content that is already pub
 ```
 cd ~/Downloads
 pip3 install wget
-git clone https://github.com/mattiaborsoi/Go-SMS-Pro-Scraper
-cd Go-SMS-Pro-Scraper
+git clone https://github.com/mattiaborsoi/web-image-scraper
+cd web-image-scraper
 sh sms.sh
 ```
 
