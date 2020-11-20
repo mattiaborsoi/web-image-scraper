@@ -8,10 +8,12 @@ If you find this useful, please buy me a coffee
 
 <a href="https://www.paypal.me/mattiab/">
     <img src="https://img.shields.io/badge/paypal-%2300457C.svg?&style=for-the-badge&logo=paypal&logoColor=white" />
-  </a>&nbsp;&nbsp;
+  </a>
 
-<br><br>
+<br>
 
+ # WARNING
+This tool is for research purpose only and retrieves content that is already public. Any action with any of the downloaded content is against the law.
 
  # Setup
 ```
