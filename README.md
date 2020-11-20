@@ -1,4 +1,4 @@
-# Go SMS Pro Scraper
+# WEB Image Scraper Demo
  Following the recent findings (Source: [Trustwave](https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/go-sms-pro-vulnerable-to-media-file-theft/?=go-sms-pro-vulnerability-to-media-file-theft)) that the Android messaging app Go SMS Pro uploads all content publicly, here is an example of a scraper to fetch and download images from a URL following an incremental pattern.
  eg. site.example/000000 > FFFFFF
 
@@ -28,8 +28,8 @@ sh sms.sh
 
  # Note 1
  I hope the developers fix the bug and implement some kind of authentication for shared content. Until then all attachments to a chat are exposed publicly.
- # Note 1
- The scraper in this example starts from the url gs.3g.cn/D/dd**0000**, increasing the HEX value to gs.3g.cn/D/dd**FFFF**
+ # Note 2
+ The scraper in this example starts from the url URL/D/dd**0000**, increasing the HEX value to URL/D/dd**FFFF**
  
 
 <p align='center'>
