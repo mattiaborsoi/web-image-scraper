@@ -1,7 +1,6 @@
 import sys, time, requests, urllib.parse, mimetypes, zipfile, os
-from os.path import expanduser
-from pathlib import Path
 allowedExtensions = [".jpg", ".jpeg", ".png", ".zip", ".mp4", ".pdf"] #skipping audio and other files
+from os.path import expanduser
 home = expanduser("~")
 localPath = home + "/Downloads/"
 print("Downloads folder set to: ", localPath)
@@ -32,6 +31,7 @@ for indexInt in range(43520,16777216):
                     print("Downloaded:", fileName)
                     if extension == ".zip":
                         extractPath = localPath + str(indexHex)
+                        from pathlib import Path
                         Path(extractPath).mkdir(parents=True, exist_ok=True)
                         with zipfile.ZipFile(fileName, 'r') as zip_ref:
                                 zip_ref.extractall(extractPath)
