@@ -14,15 +14,15 @@ If you find this useful, please buy me a coffee
 <br>
 
  # WARNING
-This tool is for research purpose only and retrieves content that is already public. Any action with any of the downloaded content is definitely against the law.
+This tool is for ***research purpose only*** and retrieves content that is already public. Any action with any of the downloaded content is definitely against the law.
 
  # Setup
 ```
 cd ~/Downloads
-pip3 install wget,request
+pip3 install requests
 git clone https://github.com/mattiaborsoi/web-image-scraper
 cd web-image-scraper
-sh sms.sh
+python scraper.py
 ```
 
 
