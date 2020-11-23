@@ -1,6 +1,8 @@
 import sys, time, requests, urllib.parse, mimetypes, zipfile, os
 allowedExtensions = [".jpg", ".jpeg", ".png", ".zip", ".mp4", ".pdf"] #skipping audio and other files
 from os.path import expanduser
+user_agent = get_random_ua()
+headers = {'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
 home = expanduser("~")
 localPath = home + "/Downloads/"
 print("Downloads folder set to: ", localPath)
@@ -12,7 +14,7 @@ for indexInt in range(43520,16777216):
     success = False
     retries = 1
     while not success:
-        r = requests.get(site)
+        r = requests.get(site,headers=headers)
         if r.status_code == 200:
             success = True
             imageUrl = r.url
@@ -53,3 +55,23 @@ for indexInt in range(43520,16777216):
                 time.sleep(wait)
                 retries +=1
         r.close()
+
+
+
+import numpy as np
+def get_random_ua():
+    random_ua = ''
+    ua_file = 'ua_file.txt'
+    try:
+        with open(ua_file) as f:
+            lines = f.readlines()
+        if len(lines) > 0:
+            prng = np.random.RandomState()
+            index = prng.permutation(len(lines) - 1)
+            idx = np.asarray(index, dtype=np.integer)[0]
+            random_proxy = lines[int(idx)]
+    except Exception as ex:
+        print('Exception in random_ua')
+        print(str(ex))
+    finally:
+        return random_ua
