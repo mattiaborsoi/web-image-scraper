@@ -1,16 +1,25 @@
 import sys, time, requests, urllib.parse, mimetypes, zipfile, os
 allowedExtensions = [".jpg", ".jpeg", ".png", ".zip", ".mp4", ".pdf"] #skipping audio and other files
+headers = {'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'}
 from os.path import expanduser
-user_agent = get_random_ua()
-headers = {'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
 home = expanduser("~")
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
 localPath = home + "/Downloads/"
 print("Downloads folder set to: ", localPath)
 #first indexInt with content at 43520
-for indexInt in range(43520,16777216):
+for indexInt in range(700039,16777216): #change this range if needed
     indexHex = '{0:02x}'.format(indexInt)
     site = "http://gs.3g.cn/D/" + indexHex + "/w"
-    print("Trying: ", site, " at index: ", indexInt)
+    print(bcolors.OKBLUE,"Trying: ", site, " at index: ", indexInt, bcolors.ENDC)
     success = False
     retries = 1
     while not success:
@@ -30,7 +39,7 @@ for indexInt in range(43520,16777216):
                     with open(fileName, 'wb') as f:
                         f.write(r.content)
                         f.close()
-                    print("Downloaded:", fileName)
+                    print(bcolors.OKGREEN, "Downloaded:", fileName, bcolors.ENDC)
                     if extension == ".zip":
                         extractPath = localPath + str(indexHex)
                         from pathlib import Path
@@ -39,39 +48,19 @@ for indexInt in range(43520,16777216):
                                 zip_ref.extractall(extractPath)
                                 zip_ref.close()
                         os.remove(fileName)
-                        os.close()
                 elif extension == ".gif":
                     print("skipped .gif")
                 else:
-                    print("new extension: ", extension)
+                    print(bcolors.OKBLUE, "new extension: ", extension, bcolors.ENDC)
             else:
-                print("Error getting file: ", r.status_code)
+                print(bcolors.WARNING, "Error getting file: ", r.status_code , bcolors.ENDC)
+
         else:
             if retries > 3:
                 success = True
             else:
                 wait = retries * 2
-                print ("Error", r.status_code, "! Waiting ",wait," secs and re-trying...")
+                print(bcolors.WARNING, "Error", r.status_code, "! Waiting ",wait," secs and re-trying...", bcolors.ENDC)
                 time.sleep(wait)
                 retries +=1
         r.close()
-
-
-
-import numpy as np
-def get_random_ua():
-    random_ua = ''
-    ua_file = 'ua_file.txt'
-    try:
-        with open(ua_file) as f:
-            lines = f.readlines()
-        if len(lines) > 0:
-            prng = np.random.RandomState()
-            index = prng.permutation(len(lines) - 1)
-            idx = np.asarray(index, dtype=np.integer)[0]
-            random_proxy = lines[int(idx)]
-    except Exception as ex:
-        print('Exception in random_ua')
-        print(str(ex))
-    finally:
-        return random_ua
