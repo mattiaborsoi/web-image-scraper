@@ -16,7 +16,8 @@ class bcolors:
 localPath = home + "/Downloads/"
 print("Downloads folder set to: ", localPath)
 #first indexInt with content at 43520
-for indexInt in range(700039,16777216): #change this range if needed
+#~20th November 2020 at around 15113519
+for indexInt in range(43520,16777216): #change this range if needed
     indexHex = '{0:02x}'.format(indexInt)
     site = "http://gs.3g.cn/D/" + indexHex + "/w"
     print(bcolors.OKBLUE,"Trying: ", site, " at index: ", indexInt, bcolors.ENDC)
@@ -56,7 +57,7 @@ for indexInt in range(700039,16777216): #change this range if needed
                 print(bcolors.WARNING, "Error getting file: ", r.status_code , bcolors.ENDC)
 
         else:
-            if retries > 3:
+            if retries > 6:
                 success = True
             else:
                 wait = retries * 2
